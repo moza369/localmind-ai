@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">✳</div>
+                <div>
+                    <h2>Local AI Assistant</h2>
+                    <p>Text · Image · Audio</p>
+                </div>
+            </div>
+
+            <button class="new-chat" id="new-chat">+ New Chat</button>
+
+            <p class="sidebar-label">CONVERSATION</p>
+            <div class="history-item active">New Conversation</div>
+
+            <div class="sidebar-bottom">
+                <p>Powered locally by Ollama</p>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>Local AI Assistant</strong>
+                        <p>Ollama · LLaVA · Whisper</p>
+                    </div>
+                </div>
+                <button class="clear-button" id="clear-chat">
+                    Clear Chat
+                </button>
+            </header>
+
+            <section class="chat-area" id="chat-area">
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">✳</div>
+                    <h1>How can I help you today?</h1>
+                    <p>Ask a question, share an image, or use your voice.</p>
+
+                    <div class="feature-grid">
+                        <article class="feature-card">
+                            <span class="feature-icon blue">✉</span>
+                            <h3>Text chat</h3>
+                            <p>Ask questions and explore ideas.</p>
+                        </article>
+
+                        <article class="feature-card">
+                            <span class="feature-icon green">▧</span>
+                            <h3>Image analysis</h3>
+                            <p>Upload an image and ask about it.</p>
+                        </article>
+
+                        <article class="feature-card">
+                            <span class="feature-icon purple">♫</span>
+                            <h3>Audio input</h3>
+                            <p>Upload audio or record your voice.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="messages" id="messages"></div>
+            </section>
+
+            <section class="composer">
+                <div class="attachment-preview" id="attachment-preview"></div>
+
+                <textarea
+                    id="message-input"
+                    placeholder="Type your message here..."
+                    rows="2"
+                ></textarea>
+
+                <div class="composer-actions">
+                    <div class="media-actions">
+                        <input
+                            type="file"
+                            id="image-input"
+                            accept="image/*"
+                            hidden
+                        >
+                        <button class="tool-button" id="image-button">
+                            ▧ <span>Add Image</span>
+                        </button>
+
+                        <input
+                            type="file"
+                            id="audio-input"
+                            accept="audio/*"
+                            hidden
+                        >
+                        <button class="tool-button" id="audio-button">
+                            ↑ <span>Upload Audio</span>
+                        </button>
+
+                        <button class="tool-button" id="record-button">
+                            🎙 <span>Record</span>
+                        </button>
+                    </div>
+
+                    <button class="send-button" id="send-button">
+                        Send <span>➤</span>
+                    </button>
+                </div>
+
+                <p class="composer-note">
+                    Your assistant runs locally. Check model availability before use.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
